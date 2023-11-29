@@ -1,0 +1,31 @@
+@model LoginUser
+
+
+<form asp-action="Login" asp-controller="Home" method="post" class="mx-auto p-5 shadow rounded-5">
+    @* LEmail *@
+    <div class="row mb-3 gap-2 text-start">
+        <div class="col-3">
+            <label asp-for="LEmail" class="form-label"></label>
+        </div>
+        <div class="col">
+            <input class="form-control" asp-for="LEmail">
+            <span asp-validation-for="LEmail" class="text-danger"></span>
+        </div>
+    </div>
+    @* LPassword *@
+    <div class="row mb-3 gap-2 text-start">
+        <div class="col-3">
+            <label asp-for="LPassword" class="form-label"></label>
+        </div>
+        <div class="col">
+            <input class="form-control" asp-for="LPassword">
+            <span asp-validation-for="LPassword" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row mb-3 gap-2 text-start">
+        <div class="col">
+            <input type="submit" value="Submit" class="btn btn-primary fw-bolder">
+        </div>
+    </div>
+</form>

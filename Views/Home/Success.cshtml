@@ -1,0 +1,34 @@
+@model User
+
+@{
+    if (User != null)
+    {
+
+        ViewData["Title"] = $"{@Model.FirstName} {@Model.LastName} Success Page";
+    }
+    else
+    {
+        ViewData["Title"] = "User not registered Successfully";
+    }
+}
+
+<div class="container p-5">
+
+    @{
+        if (User != null)
+        {
+            <div class="mx-auto text-end">
+                <form asp-action="Logout" asp-controller="Home" method="post">
+                    <input id="logout" type="submit" value="Logout" class="bg-transparent border-0 fs-4 text-primary">
+                </form>
+            </div>
+            <h2 class="p-5 mt-5 mb-3 text-center fs-1">Success ! </h2>
+            <p class="fs-3 fw-normal">Welcome! @Model.FirstName @Model.LastName</p>
+        }
+        else
+        {
+            <h2 class="p-5 mt-5 mb-3 text-center fs-1">Something went Wrong with you Register!</h2>
+        }
+    }
+
+</div>
